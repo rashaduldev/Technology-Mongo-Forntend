@@ -18,6 +18,7 @@ import { //getAuth,
 import { auth, AuthContext } from '../../Provider/AuthProvider';
   
   const Login = () => {
+
     const [registerError, setRegisterError] = useState('');
     const [mgssuccess, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -30,19 +31,13 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
   
   
   
-    // const {user,signIn,createUser,signup}=useContext(AuthContext);
+    const {signIn}=useContext(AuthContext);
     
     const location=useLocation();
     const navigate=useNavigate();
     console.log('login', location);
   
     const googleProvider=new GoogleAuthProvider();
-  
-    
-    // console.log(user);
-    // console.log(signIn);
-    // console.log(createUser);
-    // console.log(signup);
   
     const handleLogin = (e) => {
       e.preventDefault();
@@ -94,7 +89,7 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
     const googleSignin=()=>{
       signInWithPopup(auth,googleProvider)
       .then(res=>{
-        setValue(res);
+        setValue(res.user);
       })
       .catch(err=>{
         console.log(err.message);
@@ -156,7 +151,7 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
               <input type="checkbox" id="myCheckbox" />
               <label htmlFor="myCheckbox">Accept Our Terms and Condition </label>
             </div>
-            <button onClick={handleLogin}  type="submit" className="btn btn-accent text-white w-full">Login</button>
+            <button type="submit" className="btn btn-accent text-white w-full">Login</button>
           </form>
           <div className="text-red-600">{registerError}</div>
           <div className="text-green-600">{mgssuccess}</div>

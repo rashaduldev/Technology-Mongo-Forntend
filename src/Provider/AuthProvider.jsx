@@ -3,7 +3,8 @@ import { createContext, useEffect, useState } from "react";
 
 export const AuthContext=createContext(null)
 
-import {    createUserWithEmailAndPassword, 
+import { 
+    createUserWithEmailAndPassword,
             getAuth, 
             onAuthStateChanged, 
             signInWithEmailAndPassword, 
@@ -26,6 +27,7 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth,email,password);
     };
+
      const signup=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password);
     }

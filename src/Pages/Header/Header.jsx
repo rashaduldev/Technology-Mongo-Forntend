@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Contact from '../Contact/Contact';
 import Aboutus from '../Aboutus/Aboutus';
 
@@ -27,7 +27,8 @@ const Header = () => {
              
                     <div className='my-10 mx-10'>
                     <h1 className='text-5xl text-center mt-5 mb-10 font-bold'>ALl Brands</h1>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6  gap-5  cursor-pointer'>
+                   <Link to={'/productdetails'}>
+                   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6  gap-5  cursor-pointer'>
            
            {
                   sixData.map(data=>
@@ -41,6 +42,7 @@ const Header = () => {
                   )
                 }
            </div>
+                   </Link>
                     </div>
                     <Contact></Contact>
                     <Aboutus></Aboutus>

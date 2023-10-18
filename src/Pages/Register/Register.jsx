@@ -2,10 +2,12 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../../Provider/AuthProvider";
 
-import { toast, ToastContainer } from 'react-toastify';
+import React from 'react';
+
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
@@ -21,12 +23,13 @@ const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  console.log(alemail);
+  console.log(alemail,alpassword);
 
-//   const {signup}=useContext(AuthContext);
+  const {signup}=useContext(AuthContext);
 
   const handleRegistration = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
+
 
     const accepted = e.target.myCheckbox.checked;
  
@@ -50,7 +53,7 @@ const Register = () => {
         signup(alemail,alpassword)
         .then(result=>{
           toast.success('Registration Successful');
-        console.log(result.user);
+        console.log(result.user); 
          })
         .catch(error=>{
           toast.error('This Email Alreay in Register.Please go to Login page');
