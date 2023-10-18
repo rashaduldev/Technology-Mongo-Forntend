@@ -106,7 +106,7 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
       <div
         className='min-h-screen flex items-center justify-center relative mx-10 rounded'
         style={{
-          backgroundImage: "url('https://i.ibb.co/Cvhzv2g/login.jpg')",
+          backgroundImage: "url('https://i.ibb.co/GJ5wNQX/bg.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

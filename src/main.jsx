@@ -13,6 +13,7 @@ import Root from './Root/Root.jsx';
 import Header from './Pages/Header/Header.jsx';
 import Errorpage from './Pages/Errorpage/Errorpage.jsx';
 import Login from './Pages/Login/Login.jsx';
+import Register from './Pages/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,10 +24,15 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Header></Header>,
+        loader:()=> fetch('data.json'),
       },
       {
         path:'/login',
         element:<Login></Login>,
+      },
+      {
+        path:'/register',
+        element:<Register></Register>,
       },
     ]
   },
