@@ -27,22 +27,25 @@ const Header = () => {
              
                     <div className='my-10 mx-10'>
                     <h1 className='text-5xl text-center mt-5 mb-10 font-bold'>All Brands</h1>
-                   <Link to={'/productdetails'}>
+                  
                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6  gap-5  cursor-pointer'>
            
            {
-                  sixData.map(data=>
+
+                  sixData?.map(data=> 
+                    <Link to={`/productdetails/${data.name}`}>
                   <div class="card card-compact bg-base-100 shadow-xl gap-5">
                   <figure><img src={data.img} alt="Shoes" /></figure>
                   <div class="card-body">
                       <h2 class="card-title text-2xl font-bold">{data.name}</h2>
                   </div>
                   </div>
+                  </Link>
                   
                   )
                 }
            </div>
-                   </Link>
+                   
                     </div>
                     <Contact></Contact>
                     <Aboutus></Aboutus>

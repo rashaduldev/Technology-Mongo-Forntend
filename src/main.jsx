@@ -21,6 +21,7 @@ import Detailsproduct from './Pages/Products/Detailsproduct.jsx';
 import Privatedetails from './Provider/Privatedetails.jsx';
 import Addproducts from './Pages/Products/Addproducts.jsx';
 import PrivetAddproduct from './Provider/PrivetAddproduct.jsx';
+import AddProducts from './Pages/Products/Addproducts.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,14 +45,15 @@ const router = createBrowserRouter([
       {
         path:'/products',
         element:<PrivetAddproduct>
-          <Addproducts></Addproducts>
+          <AddProducts></AddProducts>
         </PrivetAddproduct>,
       },
       {
-        path:'/productdetails',
+        path:'/productdetails/:name',
         element:<Privatedetails>
           <Detailsproduct></Detailsproduct>
         </Privatedetails>,
+        loader:()=>fetch(`http://localhost:3000/productdetails`)
       },
     ]
   },

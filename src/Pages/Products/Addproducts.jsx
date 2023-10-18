@@ -1,123 +1,100 @@
-// import React from 'react';
 
-// const Addproducts = () => {
-//     return (
-//         <div>
-//             input*
-//         </div>
-//     );
-// };
 
-// export default Addproducts;
+const AddProducts = () => {
 
-import React, { useState } from 'react';
 
-const Addproducts = () => {
-  const [formData, setFormData] = useState({
-    image: '',
-    name: '',
-    brandName: '',
-    price: '',
-    item: '',
-    shortDescription: '',
-    rating: '',
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-console.log(formData);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to an API
-  };
+    const handleUser=e=>{
+        e.preventDefault();
+        const form=e.target;
+        // form.reset();
+        const image=form.image.value;
+        const name=form.name.value;
+        const brand=form.brand.value;
+        const types=form.types.value;
+        const price=form.price.value;
+        const description=form.description.value;
+        const createData={image,name,brand,types,price,description};
+        console.log(createData);
+    
+        fetch('http://localhost:3000/productdetails',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify(createData),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
+    }
 
-  return (
-    <div className="container px-10 md:mx-auto ">
-        <h1 className='text-4xl font-bold text-center my-10'>Add a new Product</h1>
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="image">Image</label>
-          <input
-            type="text"
-            id="image"
-            name="image"
-            placeholder="Image URL"
-            className="w-full border rounded px-2 py-1"
-            value={formData.image}
-            onChange={handleChange}
-          />
+
+    return (
+        <div>
+            <form onSubmit={handleUser} className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
+                <div className="grid grid-cols-2 gap-4">
+                    {/* First Row */}
+                    <div className="col-span-2">
+                        <label htmlFor="image" className="block text-sm font-medium text-gray-700">Image</label>
+                        <input type="text" id="image" name="image" className="mt-1 p-2 w-full border rounded-md" placeholder="Image URL" />
+                    </div>
+
+                    {/* Second Row */}
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" className="mt-1 p-2 w-full border rounded-md" placeholder="Product Name" />
+                    </div>
+
+                    <div>
+                        <label htmlFor="brand" className="block text-sm font-medium text-gray-700">Brand Name</label>
+                        <input type="text" id="brand" name="brand" className="mt-1 p-2 w-full border rounded-md" placeholder="Brand Name" />
+                    </div>
+
+                    {/* Third Row */}
+                    <div>
+                        <label htmlFor="types" className="block text-sm font-medium text-gray-700">Types of Products</label>
+                        <input type="text" id="types" name="types" className="mt-1 p-2 w-full border rounded-md" placeholder="Product Types" />
+                    </div>
+
+                    <div>
+                        <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price</label>
+                        <input type="text" id="price" name="price" className="mt-1 p-2 w-full border rounded-md" placeholder="Product Price" />
+                    </div>
+
+                    {/* Fourth Row */}
+                    <div className="col-span-2">
+                        <label htmlFor="description" className="block text-sm font-medium text-gray-700">Short Description</label>
+                        <input type="text" id="description" name="description" className="mt-1 p-2 w-full border rounded-md" placeholder="Short Description" />
+                    </div>
+                </div>
+
+                {/* Button */}
+                <div className="mt-4">
+                    <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md font-semibold hover:bg-blue-600">
+                        Add Product
+                    </button>
+                </div>
+            </form>
         </div>
-        <div className="mb-4">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Product Name"
-            className="w-full border rounded px-2 py-1"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="brandName">Brand Name</label>
-          <input
-            type="text"
-            id="brandName"
-            name="brandName"
-            placeholder="Brand Name"
-            className="w-full border rounded px-2 py-1"
-            value={formData.brandName}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="price">Price</label>
-          <input
-            type="text"
-            id="price"
-            name="price"
-            placeholder="Price"
-            className="w-full border rounded px-2 py-1"
-            value={formData.price}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="item">Item</label>
-          <input
-            type="text"
-            id="item"
-            name="item"
-            placeholder="Item"
-            className="w-full border rounded px-2 py-1"
-            value={formData.item}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="shortDescription">Short Description</label>
-          <input
-            type="text"
-            id="shortDescription"
-            name="shortDescription"
-            placeholder="Short Description"
-            className="w-full border rounded px-2 py-1"
-            value={formData.shortDescription}
-            onChange={handleChange}
-          />
-        </div>
-      
-        <div className=" text-center">
-          <button type="submit" className="bg-blue-500 text-white rounded px-4 py-2">
-            Add Product
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+    );
 };
 
-export default Addproducts;
+export default AddProducts;
+
+
+
+
+{/* fetch('http://localhost:3000/newusers',{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body:JSON.stringify(createData),
+    })
+
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+    }) */}
