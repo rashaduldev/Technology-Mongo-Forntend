@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Contact from '../Contact/Contact';
 import Aboutus from '../Aboutus/Aboutus';
+import sixDData from '../../../public/data.json'
 
 const Header = () => {
-    const sixData=useLoaderData();
-    const {name,img}=sixData;
-    console.log(sixData);
+
+    // const sixData=useLoaderData();
+    // const {name,img}=sixData;
+    // console.log(sixData);
 
     const heroStyle = {
         backgroundImage: 'url(https://i.ibb.co/J2s4HWG/banner.jpg)',
@@ -32,7 +34,7 @@ const Header = () => {
            
            {
 
-                  sixData?.map(data=> 
+                    sixDData?.map(data=> 
                     <Link to={`/productdetails/${data.name}`}>
                   <div class="card card-compact bg-base-100 shadow-xl gap-5">
                   <figure><img src={data.img} alt="Shoes" /></figure>

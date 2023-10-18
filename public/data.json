@@ -2,31 +2,50 @@
     {
         "id": 1,
         "img": "https://i.ibb.co/Vj2h98X/apple.jpg",
-        "name": "Apple"
+        "name": "Apple",
+        "img1": "https://i.ibb.co/Xtq2ft4/iph1.jpg",
+        "img2": "https://i.ibb.co/fQ7VZ6s/iph2.jpg",
+        "img3": "https://i.ibb.co/MCZ1Tcz/iph3.jpg"
+        
     },
     {
         "id": 2,
         "img": "https://i.ibb.co/MSvPZDq/samsung.jpg",
-        "name": "Samsung"
+        "name": "Samsung",
+        "img1": "https://i.ibb.co/pbyphhQ/sm1.jpg",
+        "img2": "https://i.ibb.co/CMcsktv/sm2.jpg",
+        "img3": "https://i.ibb.co/dBnkB5W/sm3.jpg"
     },
     {
         "id": 3,
         "img": "https://i.ibb.co/zQwjnxC/sony.jpg",
-        "name": "Sony"
+        "name": "Sony",
+         "img1": "https://i.ibb.co/s5J1JFf/sn1.jpg",
+        "img2": "https://i.ibb.co/jwxVjYW/sn2.jpg",
+        "img3": "https://i.ibb.co/Xytyyg4/sn3.jpg"
     },
     {
         "id": 4,
         "img": "https://i.ibb.co/wsCBFyV/google.jpg",
-        "name": "Google"
+        "name": "Google",
+        "img1": "https://i.ibb.co/Bs4tsHB/gg2.jpg",
+        "img2": "https://i.ibb.co/tbSpvhX/gg1.jpg",
+        "img3": "https://i.ibb.co/GCNVhnp/gg3.jpg"
     },
     {
         "id": 5,
         "img": "https://i.ibb.co/QrZCk5L/intel.jpg",
-        "name": "Intel"
+        "name": "Intel",
+        "img1": "https://i.ibb.co/SmBhbf2/int1.jpg",
+        "img2": "https://i.ibb.co/KFXH6J1/int2.jpg",
+        "img3": "https://i.ibb.co/LxryY67/int3.jpg"
     },
     {
         "id": 6,
         "img": "https://i.ibb.co/7CTnd8N/microsoft.jpg",
-        "name": "Microsoft"
+        "name": "Microsoft",
+        "img1": "https://i.ibb.co/Ns5Q4hS/ms1.jpg",
+        "img2": "https://i.ibb.co/zh3DVdP/ms2.jpg",
+        "img3": "https://i.ibb.co/3yGnrpk/ms3.jpg"
     }
 ]
