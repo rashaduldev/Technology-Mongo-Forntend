@@ -43,7 +43,7 @@ const Navber = () => {
     </div>
     {/* <button onClick={handleLogout} className='btn btn-primary'><NavLink to={'/login'}>Log Out</NavLink></button> */}
     </div>
-          <a class="btn">LOgIn</a>
+          <Link to={'/login'}><a class="btn">LOgIn</a></Link>
         </div>
       </div>
     );
