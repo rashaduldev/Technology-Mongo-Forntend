@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Contact from '../Contact/Contact';
+import Aboutus from '../Aboutus/Aboutus';
 
 const Header = () => {
     const sixData=useLoaderData();
@@ -40,6 +42,8 @@ const Header = () => {
                 }
            </div>
                     </div>
+                    <Contact></Contact>
+                    <Aboutus></Aboutus>
 
      </div>
     );
