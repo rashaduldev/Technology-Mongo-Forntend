@@ -20,6 +20,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Detailsproduct from './Pages/Products/Detailsproduct.jsx';
 import Privatedetails from './Provider/Privatedetails.jsx';
 import Addproducts from './Pages/Products/Addproducts.jsx';
+import PrivetAddproduct from './Provider/PrivetAddproduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/products',
-        element:<Addproducts></Addproducts>,
+        element:<PrivetAddproduct>
+          <Addproducts></Addproducts>
+        </PrivetAddproduct>,
       },
       {
         path:'/productdetails',

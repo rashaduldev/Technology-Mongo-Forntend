@@ -26,7 +26,7 @@ const Header = () => {
                 </div>
              
                     <div className='my-10 mx-10'>
-                    <h1 className='text-5xl text-center mt-5 mb-10 font-bold'>ALl Brands</h1>
+                    <h1 className='text-5xl text-center mt-5 mb-10 font-bold'>All Brands</h1>
                    <Link to={'/productdetails'}>
                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6  gap-5  cursor-pointer'>
            

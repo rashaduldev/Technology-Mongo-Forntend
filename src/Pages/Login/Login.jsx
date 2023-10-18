@@ -51,7 +51,7 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
           navigate(location?.state ? location.state: '/')
         })
          .catch(error => {
-          toast.error(error.message);
+          // toast.error(error.message);
           console.log(error.message);
         });
         console.log("good");
@@ -60,8 +60,8 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
       setRegisterError('');
   
        if(!accepted){
-        toast.error('You must accept the terms and conditions');
-        return;
+       
+        return  toast.error('You must accept the terms and conditions');
       }
     };
   
@@ -89,7 +89,7 @@ import { auth, AuthContext } from '../../Provider/AuthProvider';
     const googleSignin=()=>{
       signInWithPopup(auth,googleProvider)
       .then(res=>{
-        setValue(res.user);
+        setValue(res);
       })
       .catch(err=>{
         console.log(err.message);
