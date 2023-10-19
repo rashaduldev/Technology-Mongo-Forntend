@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 
 
 const AddProducts = () => {
@@ -20,7 +21,7 @@ const AddProducts = () => {
         const description=form.description.value;
         const createData={image,name,brand,types,price,reating,description};
         console.log(createData);
-        success('')
+     
         fetch('http://localhost:3000/productdetails',{
             method:"POST",
             headers:{
@@ -32,8 +33,10 @@ const AddProducts = () => {
         .then(data=>{
             console.log(data);
             setSuccess(data);
-            alert('added successfully')
-            success.reset('');
+            // alert('added successfully');
+            swal("Product Added Succesfully!", "You clicked the button!", "success");
+            form.reset('');
+           
         })
     }
 
