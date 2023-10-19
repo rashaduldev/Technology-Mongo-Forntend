@@ -28,9 +28,9 @@ const Item = ({Sdata}) => {
             if (!isExist) {
                 favIteam.push(Sdata); 
                 localStorage.setItem('favorites', JSON.stringify(favIteam));
-                toast.success("Added to Donation");
+                toast.success("Added My Cart");
             } else {
-                toast.error("Item already exists in Donation");
+                toast.error("Item already exists in My Cart.Please Check it");
             }
 
         }
