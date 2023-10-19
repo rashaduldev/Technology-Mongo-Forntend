@@ -46,7 +46,9 @@ const Detailsproduct = () => {
                 </div>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-5  '>
                 {
-                    lodeddata.filter(data => data.brand. toLowerCase()  === name. toLowerCase() ).map(singleData => <div  className='mt-5'>
+                    lodeddata.filter(data => data.brand. toLowerCase()  === name. toLowerCase() ).map(singleData => <div 
+                    key={singleData._id} singleData={singleData}
+                    className='mt-5'>
                         <div class="card bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10 ">
                                 <img src={singleData.image} class="rounded-xl" />

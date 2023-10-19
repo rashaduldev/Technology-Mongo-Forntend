@@ -23,6 +23,7 @@ import Addproducts from './Pages/Products/Addproducts.jsx';
 import PrivetAddproduct from './Provider/PrivetAddproduct.jsx';
 import AddProducts from './Pages/Products/Addproducts.jsx';
 import Itemdetailes from './Pages/Products/Itemdetailes.jsx';
+import Cart from './Pages/Products/Cart/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>,
+      },
+      {
+        path:'/cart',
+        element:<Cart></Cart>,
       },
       {
         path:'/item/:name',
