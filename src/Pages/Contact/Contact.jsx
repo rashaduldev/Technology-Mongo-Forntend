@@ -31,7 +31,7 @@ const Contact = () => {
               +91 555 668 986
               </p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100"  data-aos="zoom-in-left">
             <form onSubmit={handlesubmit} className="card-body">
               <h2>Leave a message</h2>
               <div className="form-control">

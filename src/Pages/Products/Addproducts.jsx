@@ -42,7 +42,7 @@ const AddProducts = () => {
 
 
     return (
-        <div>
+        <div className="mt-10">
             <form onSubmit={handleUser} className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md">
                 <div className="grid grid-cols-2 gap-4">
                     {/* First Row */}

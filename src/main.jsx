@@ -22,6 +22,7 @@ import Privatedetails from './Provider/Privatedetails.jsx';
 import Addproducts from './Pages/Products/Addproducts.jsx';
 import PrivetAddproduct from './Provider/PrivetAddproduct.jsx';
 import AddProducts from './Pages/Products/Addproducts.jsx';
+import Itemdetailes from './Pages/Products/Itemdetailes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>,
+      },
+      {
+        path:'/item/:name',
+        element:<Itemdetailes></Itemdetailes>,
+        loader:()=>fetch(`http://localhost:3000/productdetails`)
       },
       {
         path:'/products',
