@@ -24,6 +24,8 @@ import PrivetAddproduct from './Provider/PrivetAddproduct.jsx';
 import AddProducts from './Pages/Products/Addproducts.jsx';
 import Itemdetailes from './Pages/Products/Itemdetailes.jsx';
 import Cart from './Pages/Products/Cart/Cart.jsx';
+import Update from './Pages/Products/Update.jsx';
+import Privetupdate from './Provider/Privetupdate.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,12 @@ const router = createBrowserRouter([
       {
         path:'/cart',
         element:<Cart></Cart>,
+      },
+      {
+        path:'/update/:name',
+        element:<Privetupdate>
+          <Update></Update>
+        </Privetupdate>,
       },
       {
         path:'/item/:name',

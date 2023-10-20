@@ -61,7 +61,7 @@ const Detailsproduct = () => {
                                 <h2 class="card-title">Reating:{singleData.reating}</h2>
                                 {/* <p>{singleData.}</p> */}
                                 <div class="card-actions my-5">
-                                   <button class="btn btn-primary">Update</button>
+                                   <Link to={`/update/${singleData._id}`}><button class="btn btn-primary">Update</button></Link>
                                    <Link to={`/item/${singleData._id}`}><button class="btn btn-primary">Details</button></Link>
                                 </div>
                             </div>
