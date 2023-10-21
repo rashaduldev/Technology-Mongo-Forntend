@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
     const updateLoader = useLoaderData();
@@ -11,7 +12,7 @@ const Update = () => {
         brand: productToUpdate.brand || '',
         types: productToUpdate.types || '',
         price: productToUpdate.price || '',
-        rating: productToUpdate.rating || '',
+        reating: productToUpdate.reating || '',
         description: productToUpdate.description || '',
     });
 
@@ -22,7 +23,7 @@ const Update = () => {
             [name]: value,
         });
 
-        fetch(`https://coffee-store-server-74xiae2di-jhankarphero.vercel.app/coffee/${_id}`, {
+        fetch(`https://ass-10-backend-dwyjuure1-rashaduldev.vercel.app/productdetails/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,6 +34,7 @@ const Update = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
+                    swal("Product Added Succesfully!", "You clicked the button!", "success");
                     Swal.fire({
                         title: 'Success!',
                         text: 'Coffee Updated Successfully',
@@ -51,6 +53,7 @@ const Update = () => {
     return (
         <div className="mt-10">
             <form className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md" onSubmit={handleSubmit}>
+                <h1 className='text-5xl font-bold mb-9'>Update Product</h1>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
                         <label htmlFor="image" className="block text-sm font-medium text-gray-700">
@@ -137,7 +140,7 @@ const Update = () => {
                             name="rating"
                             className="mt-1 p-2 w-full border rounded-md"
                             placeholder="Rating number out of 5"
-                            value={formData.rating}
+                            value={formData.reating}
                             onChange={handleFormChange}
                             required
                         />
