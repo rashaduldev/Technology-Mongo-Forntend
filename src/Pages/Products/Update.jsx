@@ -21,6 +21,26 @@ const Update = () => {
             ...formData,
             [name]: value,
         });
+
+        fetch(`https://coffee-store-server-74xiae2di-jhankarphero.vercel.app/coffee/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedCoffee)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     };
 
     const handleSubmit = (e) => {
