@@ -2,8 +2,11 @@ import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import brandData from '../../../public/data.json'
 
-const Detailsproduct = () => {
-    const { name } = useParams();
+const Detailsproduct = ({Sdata}) => {
+    console.log(Sdata);
+    console.log(brandData);
+    const { name} = useParams();
+
     console.log(name);
 
     const lodeddata = useLoaderData();

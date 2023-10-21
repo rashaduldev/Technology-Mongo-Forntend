@@ -22,7 +22,7 @@ const AddProducts = () => {
         const createData={image,name,brand,types,price,reating,description};
         console.log(createData);
      
-        fetch('http://localhost:3000/productdetails',{
+        fetch('https://ass-10-backend-dwyjuure1-rashaduldev.vercel.app/productdetails',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
