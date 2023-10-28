@@ -59,7 +59,10 @@ const router = createBrowserRouter([
       },
       {
         path:'/item/:name',
-        element:<Itemdetailes></Itemdetailes>,
+        element:<Privatedetails>
+          <Itemdetailes></Itemdetailes>
+        </Privatedetails>
+        ,
         loader:()=>fetch(`https://ass-10-backend-dwyjuure1-rashaduldev.vercel.app/productdetails`)
       },
       {
@@ -70,9 +73,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/productdetails/:name',
-        element:<Privatedetails>
+        element:
           <Detailsproduct></Detailsproduct>
-        </Privatedetails>,
+        ,
         loader:()=>fetch(`https://ass-10-backend-dwyjuure1-rashaduldev.vercel.app/productdetails`)
       },
     ]
